@@ -1,10 +1,11 @@
-* {
+.main-container {
     background-color: #434A54;
 }
+
 .hero {
     position: relative;
-    background-color: #434A54;
 }
+
 .hero-overlay {
     text-align: center;
     /* position: absolute; */
@@ -20,18 +21,19 @@ h1 {
 }
 
 .hero-image {
-    display: block;
+    /* display: block;
     overflow: visible;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+     */
     /* z-index: 1; */
 }
 
 
 /* Css:
-Hero has no background color just the logo and title floating at the top Title color: Aqua #3BAFDA
-Background: Dark Gray #434A54
+check, Hero has no background color just the logo and title 
+check,floating at the top Title color: Aqua #3BAFDA
+check, Background: Dark Gray #434A54
 carousel top 50: Lavendar #967ADC 
 Carousel Favories: Grapefruit #DA4453
 Carousel backgrounds: Dark Gray #434A54
