@@ -1,49 +1,44 @@
-var channelInput = document.getElementById("channel-input");
-var savedVideoCardEl = document.getElementById("video-container");
-var searchBtn = document.getElementById("search-button");
-// if we need a client id add here
-// discovery doc, scopes, authorizeButton
+var videoSelected = document.querySelector(".carousel-item");
+var savedVideoContainerEl = document.getElementById("video-container");
 var contentEl = document.getElementById("content");
-var channelFormEl = document.getElementById("channel-form");
-var channelInput = document.getElementById("channel-input");
-
-var videoContainer = document.getElementById("video-container");
-
-
+var carousel = document.querySelector(".carousel");
 
 //this connects to the array and saves any artist looked at right now and allow us to pull that artist back up
 var savedArray = JSON.parse(window.localStorage.getItem("savedArray")) || [];
 
+$(document).ready(function () {
+  $('.carousel').carousel();
+});
 
-  
-  $(document).ready(function () {
-    $('.carousel').carousel();
-  });
-
-  //gathers the info if users search
-  searchBtn.on("click", function() {
-    var userSearch = channelInput.value(); 
-    channelInput.value("").trim();
-    searchByKeyword(userSearch);
-  })  
-  
-  //takes the artist card and saves it, (drag and drop function)?
-  function makeSavedGroup(text) {
-    var li = document.createElement("<li>").addClass("list-group-item").textContent(text);
-    savedVideoCardEl.appendChild(li);
+function SaveAVideo (event) {
+  event.preventDefault();
+  // it isn't the textContent...
+  videoSelected = event.target.href;
+  console.log(videoSelected);
+  //connect with the youtube video aLink
+  makeSavedGroup(videoSelected);
+}
+   
+//takes the artist card and saves it, (drag and drop function)?
+function makeSavedGroup(videoSelected) {
+    pastVideo.push(videoSelected)
+    var savedOneVideoEl = document.createElement("div").setAttribute
+    //textContent?
+    ("class", "list-group-item").href(pastVideo);
+    savedVideoContainerEl.appendChild(savedOneVideoEl);
   }
   
   
-  //this grabs saved the videos to watch again later, 
-  savedVideoCardEl.on("click", "li", function() {
-    searchByKeyword($(this).textConent());
+  //this reconnects with saved videos to watch again later, 
+  savedVideoContainerEl.addEventListener("click", function() {
+    searchForVideo($(this).href());
  
     if (savedArray.length < 0) {
       searchForVideo(savedArray[savedArray.length -1]);
     }
 
     for (var i = 0; i < savedArray.length; i++) {
-      makeSavedGroup(searchForVideo[i]);
+      makeSavedGroup(savedOneVideoEl[i]);
     }
   })
   
