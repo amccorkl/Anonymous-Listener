@@ -1,4 +1,23 @@
+// var musicApiKey = 
+var youTubeApiKey ="AIzaSyDtZK7v4AhM4wyZDLwKYDslq41EM0i3Gzw"
 
+$(document).ready(function () {
+  //button click function
+
+
+//the way I typed this, the curly brackets will be a searched variable, our key is in there, and it allows for 25 results to appear on a page; "kind":  "id": "youtube#video"
+  var requestUrl = "http://www.googleapis.com/youtube/v3/search?part=snippet&q={the weeknd}&key=AIzaSyDtZK7v4AhM4wyZDLwKYDslq41EM0i3Gzw&maxResults=25";
+  fetch(requestUrl) 
+    .then(
+      function (response) {
+        return response.json();
+      })
+    .then(function (data) {
+      console.log(data);
+      return data;
+    })
+  
+})
 
 $(document).ready(function () {
   $('.carousel').carousel();
