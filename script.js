@@ -1,73 +1,43 @@
-// var musicApiKey = 
-var youTubeApiKey ="AIzaSyDtZK7v4AhM4wyZDLwKYDslq41EM0i3Gzw"
+var savedVideoContainerEl = document.getElementById("video-container");
+var contentEl = document.getElementById("content");
+var carousel = document.querySelector(".carousel");
+
+
+
+//have the music albums load upon page loading, have everything embedded in the document.ready function
+
+
+
 
 $(document).ready(function () {
-  //button click function
+  //need an array that saves any artist looked at right now and allow us to pull that artist back up
 
 
-//the way I typed this, the curly brackets will be a searched variable, our key is in there, and it allows for 25 results to appear on a page; "kind":  "id": "youtube#video"
-  var requestUrl = "http://www.googleapis.com/youtube/v3/search?part=snippet&q={the weeknd}&key=AIzaSyDtZK7v4AhM4wyZDLwKYDslq41EM0i3Gzw&maxResults=25";
-  fetch(requestUrl) 
-    .then(
-      function (response) {
-        return response.json();
-      })
-    .then(function (data) {
-      console.log(data);
-      return data;
-    })
-  
-})
-
-$(document).ready(function () {
+  //access the music api for play list items to show on UI
+//right now the html will only work with those 5 videos - need a js carousel that inserts to an empty html div
   $('.carousel').carousel();
+
+
+  //function openVideo () {
+  //connect with the youtube video aLink; // We need a function with a js "this.value.videoId" <a> tag/onclick function; not sure this is the right syntax for clicking on a video:
+  //videoSelected = target.this.value.videoId();
+
+
+  //takes the artist video and saves it, (drag and drop function)
+// save it to local storage as well, then we don't need to reaccess youtube
+//function makeSavedGroup()
+
+//need a function that clicks on the saved music image to replay video
 });
 
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.carousel');
-//     var instances = M.Carousel.init(elems, options);
-//   });
-
-//   // Or with jQuery
-
-//   $(document).ready(function(){
-//     $('.carousel').carousel();
-//   });
-
-
-// function allowDrop(ev) {
-//   ev.preventDefault();
-// }
-
-// function drag(ev) {
-//   ev.dataTransfer.setData("text", ev.target.id);
-// }
-
-// function drop(ev) {
-//   ev.preventDefault();
-//   var data = ev.dataTransfer.getData("text");
-//   ev.target.appendChild(document.getElementById(data));
-// }
-
-
-// var instance = M.Carousel.init({
-//     fullWidth: true,
-//     indicators: true
-//   });
-$(document).ready(function(){
-    $('#demo-carousel').carousel({
-        numVisible: 3
-    });
-
-  });
 
 
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var elems = document.querySelectorAll('.carousel');
-//     var instances = M.Carousel.init(elems);
-//   });
 
-//Youtube API
+
+
+
+
+
