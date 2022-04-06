@@ -115,7 +115,5 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
     console.log(data);
   })
 
-
-
-
+})
 
