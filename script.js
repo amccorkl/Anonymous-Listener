@@ -1,13 +1,8 @@
 var savedVideoContainerEl = document.getElementById("video-container");
 var contentEl = document.getElementById("content");
 var carousel = document.querySelector(".carousel");
-var carouselTwo = document.getElementsByClassName("carousel")[1];
 
-var makeDraggableOne = document.getElementById("draggable1");
-var makeDraggableTwo = document.getElementById("draggable2");
-var makeDraggableThree = document.getElementById("draggable3");
-var makeDraggableFour = document.getElementById("draggable4");
-var makeDraggableFive = document.getElementById("draggable5");
+
 
 //have the music albums load upon page loading, have everything embedded in the document.ready function
 
@@ -39,68 +34,10 @@ $(document).ready(function () {
 
 
 
-// $( function() {
-//   makeDraggable.draggable();
-//   $( "#droppable" ).droppable({
-//     drop: function( event, ui ) {
-//       $( this )
-//         .addClass( "ui-state-highlight" )
-//         .find( "p" )
-//           .html( "Dropped!" );
-//     }
-//   });
-// } );
 
 
 
-$(document).ready(function () {
-  $( "#draggable1" ).draggable();
-  $( "#droppable1" ).droppable({
-    drop: function() {
-      alert( "dropped" );
-    }});
-  })
-$(document).ready(function () {
-  $( "#draggable2" ).draggable();
-  $( "#droppable2" ).droppable({
-    drop: function() {
-      alert( "dropped" );
-    }});
-  })
-$(document).ready(function () {
-  $( "#draggable3" ).draggable();
-  $( "#droppable3" ).droppable({
-    drop: function() {
-      alert( "dropped" );
-    }});
-  })
-$(document).ready(function () {
-  $( "#draggable4" ).draggable();
-  $( "#droppable4" ).droppable({
-    drop: function() {
-      alert( "dropped" );
-    }});
-  })
-$(document).ready(function () {
-  $( "#draggable5" ).draggable();
-  $( "#droppable5" ).droppable({
-    drop: function() {
-      alert( "dropped" );
-    }});
-})
 
 
 
-carousel.addEventListener('click',function(e){
-if (e.target.M_Carousel.images[1]) {
-  carouselTwo.appendChild(e.target.M_Carousel.images[1])
-}
-}
-)
 
-// var elem = document.createElement("img");
-// elem.setAttribute("src", "images/hydrangeas.jpg");
-// elem.setAttribute("height", "768");
-// elem.setAttribute("width", "1024");
-// elem.setAttribute("alt", "Flower");
-// document.getElementById("placehere").appendChild("elem");
