@@ -37,7 +37,3 @@ $(document).ready(function () {
 
 
 
-
-
-
-
