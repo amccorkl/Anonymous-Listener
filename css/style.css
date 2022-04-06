@@ -29,6 +29,11 @@ h1 {
     /* z-index: 1; */
 }
 
+#draggable { 
+    width: 150px; height: 150px; padding: 0.5em; 
+}
+
+
 
 /* Css:
 check, Hero has no background color just the logo and title 
