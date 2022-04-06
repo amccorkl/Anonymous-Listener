@@ -1,21 +1,16 @@
-var savedVideoContainerEl = document.getElementById("video-container");
-var contentEl = document.getElementById("content");
-var carousel = document.querySelector(".carousel");
+var savedVideoContainerEl = document.getElementById("saved-video-container");
+var carouselEl = document.querySelector(".carousel");
 
-
+var savedVideosArray = [];
 
 
 //have the music albums load upon page loading, have everything embedded in the document.ready function
-
-
-
-
 $(document).ready(function () {
   //need an array that saves any artist looked at right now and allow us to pull that artist back up
 
 
-  //access the music api for play list items to show on UI
-//right now the html will only work with those 5 videos - need a js carousel that inserts to an empty html div
+ //access the music api for play list items to show on UI
+ //right now the html will only work with those 5 videos - need a js carousel that inserts to an empty html div
   $('.carousel').carousel();
 
 
@@ -120,7 +115,5 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
     console.log(data);
   })
 
-
-
-
+})
 
