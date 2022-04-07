@@ -3,6 +3,60 @@ var carouselEl = document.querySelector(".carousel");
 
 var savedVideosArray = [];
 
+//array for href//
+var words = [
+  'zero',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen',
+  'seventeen',
+  'eighteen',
+  'nineteen',
+  'twenty',
+  'twenty-one',
+  'twenty-two',
+  'twenty-three',
+  'twenty-four',
+  'twenty-five',
+  'twenty-six',
+  'twenty-seven',
+  'twenty-eight',
+  'twenty-nine',
+  'thirty',
+  'thirty-one',
+  'thirty-two',
+  'thirty-three',
+  'thirty-four',
+  'thirty-five',
+  'thirty-six',
+  'thirty-seven',
+  'thirty-eight',
+  'thirty-nine',
+  'forty',
+  'forty-one',
+  'forty-two',
+  'forty-three',
+  'forty-four',
+  'forty-five',
+  'forty-six',
+  'forty-seven',
+  'forty-eight',
+  'forty-nine',
+  'fifty',
+]
 
 //have the music albums load upon page loading, have everything embedded in the document.ready function
 $(document).ready(function () {
@@ -117,9 +171,11 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
     append(data);
   })
 })
+
 // Function that grabs the data from the images array // 
 
 function append (data) {
+carouselEl.innerHTML = '';
 for (var i = 0; i < data.length; i++) {
       var imagesValue = data[i].images[3].url;
       console.log(imagesValue)
@@ -127,15 +183,13 @@ for (var i = 0; i < data.length; i++) {
       var image = document.createElement('img')
 
       anchor.setAttribute('class', 'carousel-item')
-      // anchor.classList.add('active')
-      // anchor.setAttribute('style', "z-index: 0; opacity: 1; visibility: visible; transform: translateX(175.5px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px);");
-      anchor.setAttribute('href', '#one!');
-      // anchor.setAttribute('style',)
+      anchor.setAttribute("href", "#" + words[i + 1] + "!");
       image.setAttribute('src', imagesValue);
 
       carouselEl.appendChild(anchor)
       anchor.appendChild(image)
     }
+    $('.carousel').carousel();
 }
 
 
