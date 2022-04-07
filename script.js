@@ -57,6 +57,10 @@ var words = [
   'forty-nine',
   'fifty',
 ]
+var buttonId = words
+
+
+
 
 //have the music albums load upon page loading, have everything embedded in the document.ready function
 $(document).ready(function () {
@@ -170,6 +174,64 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
     console.log(dataCopy , "this is the one i'm grabbing images from");    
     append(data);
   })
+  .then(function (button) {
+    var saveButtonOne = document.querySelector("#one");
+    var saveButtonTwo = document.querySelector("#two");
+    var saveButtonThree = document.querySelector("#three");
+    var saveButtonFour = document.querySelector("#four");
+    var saveButtonFive = document.querySelector("#five");
+    var saveButtonSix = document.querySelector("#six");
+    var saveButtonSeven = document.querySelector("#seven");
+    var saveButtonEight = document.querySelector("#eight");
+    var saveButtonNine = document.querySelector("#nine");
+    var saveButtonTen = document.querySelector("#ten");
+    var saveButtonEleven = document.querySelector("#eleven");
+    var saveButtonTwelve = document.querySelector("#twelve");
+    var saveButtonThirteen = document.querySelector("#thirteen");
+    var saveButtonFourteen = document.querySelector("#fourteen");
+    var saveButtonFifteen = document.querySelector("#fifteen");
+    var saveButtonSixteen = document.querySelector("#sixteen");
+    var saveButtonSeventeen = document.querySelector("#seventeen");
+    var saveButtonEighteen = document.querySelector("#eighteen");
+    var saveButtonNineteen = document.querySelector("#nineteen");
+    var saveButtonTwenty = document.querySelector("#twenty");
+    var saveButtonTwentyOne = document.querySelector("#twenty-one");
+    var saveButtonTwentyTwo = document.querySelector("#twenty-two");
+    var saveButtonTwentyThree = document.querySelector("#twenty-three");
+    var saveButtonTwentyFour = document.querySelector("#twenty-four");
+    var saveButtonTwentyFive = document.querySelector("#twenty-five");
+    var saveButtonTwentySix = document.querySelector("#twenty-six");
+    var saveButtonTwentySeven = document.querySelector("#twenty-seven");
+    var saveButtonTwentyEight = document.querySelector("#twenty-eight");
+    var saveButtonTwentyNine = document.querySelector("#twenty-nine");
+    var saveButtonThirty = document.querySelector("#thirty");
+    var saveButtonThirtyOne = document.querySelector("#thirty-one");
+    var saveButtonThirtyTwo = document.querySelector("#thirty-two");
+    var saveButtonThirtyThree = document.querySelector("#thirty-three");
+    var saveButtonThirtyFour = document.querySelector("#thirty-four");
+    var saveButtonThirtyFive = document.querySelector("#thirty-five");
+    var saveButtonThirtySix = document.querySelector("#thirty-six");
+    var saveButtonThirtySeven = document.querySelector("#thirty-seven");
+    var saveButtonThirtyEight = document.querySelector("#thirty-eight");
+    var saveButtonThirtyNine = document.querySelector("#thirty-nine");
+    var saveButtonForty = document.querySelector("#forty");
+    var saveButtonFortyOne = document.querySelector("#forty-one");
+    var saveButtonFortyTwo = document.querySelector("#forty-two");
+    var saveButtonFortyThree = document.querySelector("#forty-three");
+    var saveButtonFortyFour = document.querySelector("#forty-four");
+    var saveButtonFortyFive = document.querySelector("#forty-five");
+    var saveButtonFortySix = document.querySelector("#forty-six");
+    var saveButtonFortySeven = document.querySelector("#forty-seven");
+    var saveButtonFortyEight = document.querySelector("#forty-eight");
+    var saveButtonFortyNine = document.querySelector("#forty-nine'");
+    var saveButtonFifty = document.querySelector("#fifty");
+
+console.log(saveButtonOne);
+console.log(saveButtonTwo);
+console.log(saveButtonThree);
+  })
+
+  
 })
 
 // Function that grabs the data from the images array // 
@@ -181,15 +243,25 @@ for (var i = 0; i < data.length; i++) {
       console.log(imagesValue)
       var anchor = document.createElement('a')
       var image = document.createElement('img')
+      var button = document.createElement('button')
 
       anchor.setAttribute('class', 'carousel-item')
       anchor.setAttribute("href", "#" + words[i + 1] + "!");
       image.setAttribute('src', imagesValue);
+      button.setAttribute('class', 'btn btn-outline-secondary')
+      button.setAttribute('type', 'button')
+      button.setAttribute('id', buttonId[i + 1])
 
       carouselEl.appendChild(anchor)
       anchor.appendChild(image)
+      anchor.appendChild(button)
     }
     $('.carousel').carousel();
 }
 
+
+carouselEl.addEventListener('click', function(e) {
+console.log(e)
+
+})
 
