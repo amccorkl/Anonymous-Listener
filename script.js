@@ -63,7 +63,6 @@ var requestUrl = 'https://api.napster.com/v2.2/search?type=playlist&query=2022 t
 var NapsterAPIKey = "Nzc0MDQxYTEtZWRlMC00NTk4LTg0MjktMmFiYjUzYTM2ZmI2";
 
 
-
 fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
   .then(
     function (response) {
@@ -113,7 +112,30 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
   .then(function (data) {
     //images
     console.log(data);
+    dataCopy = data;
+    console.log(dataCopy , "this is the one i'm grabbing images from");    
+    append(data);
   })
-
 })
+// Function that grabs the data from the images array // 
+
+function append (data) {
+for (var i = 0; i < data.length; i++) {
+      var imagesValue = data[i].images[3].url;
+      console.log(imagesValue)
+      var anchor = document.createElement('a')
+      var image = document.createElement('img')
+
+      anchor.setAttribute('class', 'carousel-item')
+      // anchor.classList.add('active')
+      // anchor.setAttribute('style', "z-index: 0; opacity: 1; visibility: visible; transform: translateX(175.5px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px);");
+      anchor.setAttribute('href', '#one!');
+      // anchor.setAttribute('style',)
+      image.setAttribute('src', imagesValue);
+
+      carouselEl.appendChild(anchor)
+      anchor.appendChild(image)
+    }
+}
+
 
