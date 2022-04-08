@@ -1,6 +1,6 @@
 var savedVideoContainerEl = document.getElementById("saved-video-container");
 var carouselEl = document.querySelector(".carousel");
-
+var saved = document.querySelector(".saved");
 var savedVideosArray = [];
 
 //array for href//
@@ -58,6 +58,15 @@ var words = [
   'fifty',
 ]
 
+//array for button ID
+
+var buttonId = words
+
+var savedItems = []
+
+
+
+
 //have the music albums load upon page loading, have everything embedded in the document.ready function
 $(document).ready(function () {
   //need an array that saves any artist looked at right now and allow us to pull that artist back up
@@ -65,7 +74,7 @@ $(document).ready(function () {
 
  //access the music api for play list items to show on UI
  //right now the html will only work with those 5 videos - need a js carousel that inserts to an empty html div
-  $('.carousel').carousel();
+  // $('.carousel').carousel();
 
   //function openVideo () {
   //connect with the youtube video aLink; // We need a function with a js "this.value.videoId" <a> tag/onclick function; not sure this is the right syntax for clicking on a video:
@@ -149,32 +158,57 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
     console.log(data);
     dataCopy = data;
     console.log(dataCopy , "this is the one i'm grabbing images from");    
-    append(data);
+    append(carouselEl, data, "napster");
   })
+
 
 var songTitleArray = ["Loves Me Like a Rock", "Jagged Little Pill"];
 localStorage.setItem("songTitleArray", JSON.stringify(songTitleArray));
+
 })
 
 
 // Function that grabs the data from the images array // 
 
-function append (data) {
-carouselEl.innerHTML = '';
+function append (el,data,location) {
+el.innerHTML = '';
 for (var i = 0; i < data.length; i++) {
-      var imagesValue = data[i].images[3].url;
+      var imagesValue = data[i].imgSrc
+      if (location === "napster") {
+      imagesValue = data[i].images[3].url;
+      }
       console.log(imagesValue)
       var anchor = document.createElement('a')
       var image = document.createElement('img')
+      var button = document.createElement('button')
 
       anchor.setAttribute('class', 'carousel-item')
       anchor.setAttribute("href", "#" + words[i + 1] + "!");
       image.setAttribute('src', imagesValue);
+      button.setAttribute('class', 'saveBtn btn btn-outline-secondary')
+      button.setAttribute('type', 'button')
+      button.setAttribute('id', buttonId[i + 1])
 
-      carouselEl.appendChild(anchor)
+      el.appendChild(anchor)
       anchor.appendChild(image)
+      anchor.appendChild(button)
     }
-    $('.carousel').carousel();
+    if (data) {
+          $('.carousel').carousel();
+    }
 }
 
 
+
+$(document).on("click", ".saveBtn", function(){
+
+var imgsrc = $(this).prev().attr("src")
+
+savedItems.push({imgSrc: imgsrc})
+localStorage.setItem("saved-img", JSON.stringify(savedItems));
+console.log(savedItems);
+append(saved, savedItems, "saved");
+})
+
+var getStorage = JSON.parse(localStorage.getItem("saved-img")) || [];
+append(saved, getStorage, "saved");
