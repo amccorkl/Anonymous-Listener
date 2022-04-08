@@ -86,7 +86,7 @@ $(document).ready(function () {
   //function makeSavedGroup()
 
   //need a function that clicks on the saved music image to replay video
-});
+
 
 
 
@@ -165,7 +165,7 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
 var songTitleArray = ["Loves Me Like a Rock", "Jagged Little Pill"];
 localStorage.setItem("songTitleArray", JSON.stringify(songTitleArray));
 
-})
+});
 
 
 // Function that grabs the data from the images array // 
