@@ -10,7 +10,7 @@ $(document).ready(function() {
   function getVideo() {
     var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
     // var playListId = "url?list=lettersandnumbers "; 
-    var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${songTitleArray[0]}&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
+    var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${songTitleArray[0]}&origin=*&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
 
 
     // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
@@ -35,7 +35,7 @@ $(document).ready(function() {
     loadVideos(options, URL);
 
   } 
-   //connect with the youtube video by clicking on a button or the image of the music provided through the Napster api; {id} is the song chosen
+  
     
     function loadVideos (options, URL) {
     $.getJSON(URL, options, function(dataResult) {
@@ -54,43 +54,19 @@ $(document).ready(function() {
     //   frameborder="0"></iframe>
     //   `)
 
-      //if the video doesn't load, go back to the carousel screen
-      //we need the user to go back to the carousel screen after video finishes playing
-      //we need a button that allows the user to save the link to the video
-
-    // }
-  
-
-  
-  
-   
-
-
-  //this would allow the user to click on the prior image/link saved and play the video again (if we saved it)
-  // function savedVideos(dataResults) {
-  //   $.each(dataResults.items, function(i, item) {
-  //     var thumbnail = item.snippet.thumbnails.medium.url;
-
-  //     $(savedVideoContainerEl).append(`
-  //     <div class="target-video data-key="${video}>
-  //       <img src="${thumbnail}" alt=" class=videos>
-  //     </div>`);
-  //   });
     
-  // }
+    // }
+
 
   getVideo();
 })
 
 
-  //whichever video is clicked on will play
-//   $(savedVideoContainerEl).on("click", "div", function() {
-//     var id = $(this).att("data-key");
-//   });
+
 
   
 
-// })
+
  
  
   
