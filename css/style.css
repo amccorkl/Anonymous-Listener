@@ -1,20 +1,27 @@
 
 body {
-  background-color: #434A54;
+  background: linear-gradient(180deg, #434A54, #030303);
+  background-size: 300% 300%;
+/
+
 }
 
 /* container1 */
+#hero {
+    background-color: #E9573F;
+    border: solid 5px #FC6E51;
+
+}
 .hero-img{
     align-items: flex-start;
     } 
     #hero-img {
-    overflow: visible;
+        overflow: visible;
         width: 200px;
         height: inherit;
         z-index: 1;
     } 
 #title{
-    margin-left: -7em;
     align-items: center;
     justify-content: center;
 }
@@ -22,38 +29,57 @@ body {
         flex: 1;
         text-align: center;
         font-size: 6vh;
-        font-family: 'Babylonica', cursive;
+        font-family: 'Gloria Hallelujah', cursive;
         transform: translate(9vw);
-        color: #3BAFDA;
+        color: #3f2da5;
         font-weight: 700;
         text-transform: uppercase;
         z-index: 0;
         
     }
-/* container2 */
-#rewind{
-   background-color: #4A89DC;
-}
-#play{
-    background-color: #8CC152;
-}
-#pause{
-    background-color: #A0D468;
-}
-#fastForward{
-    background-color: #4A89DC;
-}
 
-/* container 3 */
-/* carousel 1 */
-    #carousel-item {
-        border: solid 5px#967ADC;
+    #topTracks {
+        /* margin-left: -9em; */
+        text-align: center;
+        font-size: 4vh;
+        font-family: 'Gloria Hallelujah', cursive;
+        transform: translate(9vw);
+        color: #967ADC;
+        font-weight: 700;
+        text-transform: uppercase;
+        z-index: 0;
     }
 
+    #myPlaylist {
+        /* margin-left: -9em; */
+        text-align: center;
+        font-size: 4vh;
+        font-family: 'Gloria Hallelujah', cursive;
+        transform: translate(9vw);
+        color: #DA4453;
+        font-weight: 700;
+        text-transform: uppercase;
+        z-index: 0;
+    }
+/* container 3 */
+/* carousel 1 */
+    #carousel-item1 {
+    /* border: solid 3px #967ADC; */
+    }
 
-#video-container {
+    #carousel-item2 {
+        /* border: solid 3px #DA4453; */
+    }
+
+#carousel1 {
+    background-color: #967ADC;
+    border: solid 5px #AC92EC;
+}
+
+
+#carousel2 {
     background-color: #DA4453;
-    border: solid 5px#967ADC;
+    border: solid 5px #ED5565;
 }
 
 /* container 4 */
@@ -66,6 +92,17 @@ body {
 
 .margin{
     margin-top: 2rem;
+}
+
+.btn{
+    background-color: #8CC152;
+    cursor: pointer;
+    color: black;
+
+}
+
+.btn:hover {
+    background-color: #8bc152be;
 }
 /* carousel 2 */
 
