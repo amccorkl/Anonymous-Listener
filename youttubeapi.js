@@ -4,32 +4,32 @@ var songTitleArray = JSON.parse(localStorage.getItem("songTitleArray")) || [];
 console.log(songTitleArray);
 // var video = item.snippet.resourceId.videoId;
 
-/* <iframe width="959" height="719" src="https://www.youtube.com/embed/OOgpT5rEKIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */
 
 $(document).ready(function() {
 
   function getVideo() {
     var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
     // var playListId = "url?list=lettersandnumbers "; 
-    var URL = `https://www.googleapis.com/youtube/v3/search?q=${songTitleArray[0]}&part=snippet&forDeveloper=true`;
+    var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${songTitleArray[0]}&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
 
 
-  // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
-  //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
-  //   "Accept": "application/json"
+    // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
+    //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
+    //   "Accept": "application/json"
 
-  // }).then (response => {
-  //   return response.json();
-    
-  // }).then(data => {
-  //   console.log(data);
-  // })
+    // }).then (response => {
+    //   return response.json();
+      
+    // }).then(data => {
+    //   console.log(data);
+    // })
 
 
     var options = {
       // part: "snippet, id",
       key: youTubeKey,
       maxResults: 3,
+      dataType: "jsonp"
       //playListId: playlistId# 
     }
     loadVideos(options, URL);
@@ -41,24 +41,24 @@ $(document).ready(function() {
     $.getJSON(URL, options, function(dataResult) {
       console.log(dataResult);
       //var id = data.items[0].snippet.resourceId.videoId;
-      watchVideo(id);
+      // watchVideo(id);
       // savedVideos(id);
 
       })  
     }  
 
     //loads the video at a certain size on the UI
-    function watchVideo() { //id= would be the song/artist clicked on
-      $("#carousel").html(`<iframe width="640" height="360"
-      src="https://www.youtube.com/embed/{${id}}?autoplay=1"
-      frameborder="0"></iframe>
-      `)
+    // function watchVideo() { //id= would be the song/artist clicked on
+    //   $("#carousel").html(`<iframe width="640" height="360"
+    //   src="https://www.youtube.com/embed/{${id}}?autoplay=1"
+    //   frameborder="0"></iframe>
+    //   `)
 
       //if the video doesn't load, go back to the carousel screen
       //we need the user to go back to the carousel screen after video finishes playing
       //we need a button that allows the user to save the link to the video
 
-    }
+    // }
   
 
   
@@ -77,7 +77,7 @@ $(document).ready(function() {
   //     </div>`);
   //   });
     
-  }
+  // }
 
   getVideo();
 })
