@@ -5,88 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anonymous Listener</title>
-    <link rel="icon" type="image/png" href="./buffalo with headphones copy.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Gloria+Hallelujah&family=Rubik+Glitch&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
-    <link rel="stylesheet" href="./css/reset.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link rel="stylesheet" href="./css/style.css">
+      <link rel="icon" type="image/png" href="./assets/images/buffalo.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Gloria+Hallelujah&family=Rubik+Glitch&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="./assets/css/reset.css">
+      <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-   
 
   <!-- Main Page Content goes here -->
   <section>
     <div class="container">
-      <div class="row center-align" id="hero">
+      <div class="row" id="hero">
         <div class="col s12 m1 l1">
-          <img src="buffalo with headphones copy.png" alt="buffalo with headphones" id="hero-img">
+          <img src="./assets/images/buffalo.png" alt="buffalo with headphones" id="hero-img">
         </div>
       <div class="col s12 m11 l11" id="title">
         <h1>Anonymous Listener</h1>
       </div>
       </div>
-      
-    
-<br>
-          <div class="container">
-            <div class="col s12 center-align">
-              <h2 id="topTracks">Top Tracks</h2>
-            </div>
-          </div>
 
 <br>
 
-
-    <div id="video-container" style="display:block">
-        <div class="row">
-
-  
-          <div class="carousel" id="carousel1">
-            <a class="carousel-item z-depth-5" id="carousel-item1" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
-          </div>
-
-            <div value="theWeekend"></div>
+      <div class="row" id="subTitle1">
+        <div class="col s12 m12 l12 left-align"> 
+          <h2 id="topTracks">Top Tracks</h2>
         </div>
-    </div>
-
-
-<br>
-
-          <div class="container">
-            <div class="col s12">
-              <h2 id="myPlaylist">My Playlist</h2>
-            </div>
-          </div>
+      </div>
 
 <br>
 
-        <div id="video-container" style="display:block">
+      <div id="video-container" style="display:block">
           <div class="row">
-            <div class="carousel saved" id="carousel2">
-              <a class="carousel-item z-depth-5" id="carousel-item2" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
-            </div>    
-          </div>         
-    </div>
+            <div class="carousel" id="carousel1">
+              <a class="carousel-item z-depth-5" id="carousel-item1" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
+            </div>
+              <div value="theWeekend"></div>
+          </div>
+      </div>
+
+<br>
+
+      <div class="row" id="subTitle2">
+        <div class="col s12 m12 l12 left-align">
+          <h2 id="myPlaylist">My Playlist</h2>
         </div>
+      </div>
+
+<br>
+
+      <div id="video-container" style="display:block">
+        <div class="row">
+          <div class="carousel saved" id="carousel2">
+            <a class="carousel-item z-depth-5" id="carousel-item2" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
+          </div>    
+        </div>         
+      </div>
+    </div>
   </section>
 
-
-
+<br>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- <script src="./youtube.js"></script> -->
-  <script src="./script.js"></script>
+  <!-- <script src="./assets/js/youttubeapi.js"></script> -->
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
