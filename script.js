@@ -174,92 +174,79 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
 // var songTitleArray = ["Loves Me Like a Rock", "Jagged Little Pill"];
 // localStorage.setItem("songTitleArray", JSON.stringify(songTitleArray));
 
-fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
-  .then(
-    function (response) {
-      return response.json();
-    })
-  .then(function (data) {
-    console.log(data.search.data.playlists[0]);
-    var trackURL = data.search.data.playlists[0].links.tracks.href;
-    return fetch(trackURL + "?limit=50", { headers: { apikey: NapsterAPIKey } })
+// fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
+//   .then(
+//     function (response) {
+//       return response.json();
+//     })
+//   .then(function (data) {
+//     console.log(data.search.data.playlists[0]);
+//     var trackURL = data.search.data.playlists[0].links.tracks.href;
+//     return fetch(trackURL + "?limit=50", { headers: { apikey: NapsterAPIKey } })
 
-  })
+//   })
 
-  .then(
-    function (response) {
-      return response.json();
-    })
-  .then(function (data) {
+//   .then(
+//     function (response) {
+//       return response.json();
+//     })
+//   .then(function (data) {
     
-    console.log(data);
-    var albumPromises = []
-    for (var i = 0; i < data.tracks.length; i++) {
-      var albumURL = data.tracks[i].links.albums.href;
-      var albumPromise = fetch(albumURL, { headers: { apikey: NapsterAPIKey } }).then(
-        function (response) {
-          return response.json();
-        });
-      albumPromises.push(albumPromise)
-    }
-    return Promise.all(albumPromises)
+//     console.log(data);
+//     var albumPromises = []
+//     for (var i = 0; i < data.tracks.length; i++) {
+//       var albumURL = data.tracks[i].links.albums.href;
+//       var albumPromise = fetch(albumURL, { headers: { apikey: NapsterAPIKey } }).then(
+//         function (response) {
+//           return response.json();
+//         });
+//       albumPromises.push(albumPromise)
+//     }
+//     return Promise.all(albumPromises)
     
-  })
+//   })
 
-  .then(function (data) {
-    //tracks
-    console.log(data);
-    var artistsPromises = []
-    for (var i = 0; i < data.length; i++) {
-      var artistsURL = data[i].albums[0].links.artists.href;      
-      var artistPromise = fetch(artistsURL, { headers: { apikey: NapsterAPIKey } }).then(
-        function (response) {
-          return response.json();
-        });
-      artistsPromises.push(artistPromise)
-    }
-    return Promise.all(artistsPromises)
+//   .then(function (data) {
+//     //tracks
+//     console.log(data);
+//     var artistsPromises = []
+//     for (var i = 0; i < data.length; i++) {
+//       var artistsURL = data[i].albums[0].links.artists.href;      
+//       var artistPromise = fetch(artistsURL, { headers: { apikey: NapsterAPIKey } }).then(
+//         function (response) {
+//           return response.json();
+//         });
+//       artistsPromises.push(artistPromise)
+//     }
+//     return Promise.all(artistsPromises)
 
-  })
+//   })
 
-  .then(function (data) {
-    //tracks
-    console.log(data);
-    var namesPromises = []
-    for (var i = 0; i < data.length; i++) {
-      var name = data[i].artists[0].name[''];      
-      var namePromise = fetch(name, { headers: { apikey: NapsterAPIKey } }).then(
-        function (response) {
-          return response.json();
-        });
-      namesPromises.push(namePromise)
-    }
-    return Promise.all(namesPromises)
-  })
-  .then(function (data) {
-    //images
-    console.log(data);
-    dataCopy = data;
-    console.log(dataCopy , "this is the one i'm grabbing artist's from");    
-    append(carouselEl, data, "napster");
-  })
+//   .then(function (data) {
+//     //tracks
+//     console.log(data);
+//     var namesPromises = []
+//     for (var i = 0; i < data.length; i++) {
+//       var name = data[i].artists[0].name[''];      
+//       var namePromise = fetch(name, { headers: { apikey: NapsterAPIKey } }).then(
+//         function (response) {
+//           return response.json();
+//         });
+//       namesPromises.push(namePromise)
+//     }
+//     return Promise.all(namesPromises)
+//   })
+//   .then(function (data) {
+//     //images
+//     console.log(data);
+//     dataCopy = data;
+//     console.log(dataCopy , "this is the one i'm grabbing artist's from");    
+//     append(carouselEl, data, "napster");
+//   })
 
 
 
 });
-
-
-img.attribute('value', 'theWeekend');
-
-$(document).on("click", ".carousel-item", function(){
-e.preventDefault();
-var value = e.target.value;
-youtubeFunction(value);
-});
-
-function youtubeFunction(value) {
-  fetch('myurl${value}');
-}
 
 
 
@@ -389,19 +376,32 @@ $(document).ready(function() {
 // Youtube stuff //
 
 
-// function namefunction (names) {
-//   console.log(names, "this is name");
-//   var namePromises = []
-//   for (var i = 0; i <names.length; i++) {
-//     var nameURL = names[i].tracks[0].artistName;
-//       namePromises.push(nameURL)  
-//       (function (response) {
-//         return response.json();
-//       });
-//     }
-//     return (namePromises);
 
-// }
+
+// img.attribute('value', 'theWeekend');
+
+      
+    //   addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     var value = e.target.value;
+    //     youtubeFunction(value);
+    //   });
+
+    //   function youtubeFunction(value) {
+    //     fetch(`myurl${value}`);
+    //   }
+    //   var videoLink = [];
+    //   for (let i = 0; i < 10; i++) {
+    //     videoLink.push(`<iframe
+    //   width="560"
+    //   height="315"
+    //   src="https://www.youtube.com/embed/${response[i].id}"
+    //   title="YouTube video player"
+    //   frameborder="0"
+    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    //   allowfullscreen
+    // ></iframe>`);
+    //   }
 
 
 
