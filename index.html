@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anonymous Listener</title>
+    <link rel="icon" type="image/png" href="./buffalo with headphones copy.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Rubik+Glitch&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Babylonica&family=Gloria+Hallelujah&family=Rubik+Glitch&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
     <link rel="stylesheet" href="./css/reset.css">
@@ -25,79 +28,61 @@
   <!-- Main Page Content goes here -->
   <section>
     <div class="container">
-      <div class="row center-align">
+      <div class="row center-align" id="hero">
         <div class="col s12 m1 l1">
           <img src="buffalo with headphones copy.png" alt="buffalo with headphones" id="hero-img">
         </div>
-      <div class="col s 12 m11 l11" id="title">
+      <div class="col s12 m11 l11" id="title">
         <h1>Anonymous Listener</h1>
       </div>
       </div>
-      </div>
-    </div>
+      
     
+<br>
+          <div class="container">
+            <div class="col s12 center-align">
+              <h2 id="topTracks">Top Tracks</h2>
+            </div>
+          </div>
 
 <br>
 
-    <div class="container">
-      <div class="center-align">
-        <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="rewind"><i class='material-icons'>fast_rewind</i></a>
-        <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="play"><i class='material-icons'>play_arrow</i></a>
-        <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="pause"><i class='material-icons'>pause</i></a>
-        <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="fastForward"><i class='material-icons'>fast_forward</i></a>
-        <!-- onclick doesn't work  -->
-        <a onclick="materialize.toast('Saved To Favorites', 4000)" class="btn-floating btn-small waves-effect waves-light" id="addTrack"><i class='material-icons'>add</i></a>
-      </div>
-  </div>
-<br>
-
-    <div class="containter center-align">
-      <a class="btn-small" id="audioLink"><i class='material-icons left'>audiotrack</i>Listen on Nabster</a>
-      <a class="btn-small" id="youtubeLink"><i class='material-icons right'>movie</i>Watch on Youtube</a>
-    </div>
-
-<br>
-  <div class="margin"></div>
-
-<div class="container">
-  <div class="center-align">
-    <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="rewind"><i class='material-icons'>fast_rewind</i></a>
-    <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="play"><i class='material-icons'>play_arrow</i></a>
-    <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="pause"><i class='material-icons'>pause</i></a>
-    <a onclick="materialize.toast('')" class="btn-floating btn-small waves-effect waves-light" id="fastForward"><i class='material-icons'>fast_forward</i></a>
-    <!-- onclick doesn't work  -->
-    <a onclick="materialize.toast('Saved To Favorites', 4000)" class="btn-floating btn-small waves-effect waves-light" id="addTrack"><i class='material-icons'>add</i></a>
-  </div>
-</div>
-
-<br>
-
-
-<div class="containter center-align">
-  <a class="btn-small" id="audioLink"><i class='material-icons left'>audiotrack</i>Listen on Nabster</a>
-  <a class="btn-small" id="youtubeLink"><i class='material-icons right'>movie</i>Watch on Youtube</a>
-</div>
 
     <div id="video-container" style="display:block">
         <div class="row">
+
   
           <div class="carousel">
             <a class="carousel-item" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
+          </div>
+
+            <div value="theWeekend"></div>
+          
+          <div class="carousel" id="carousel1">
+            <a class="carousel-item z-depth-5" id="carousel-item1" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
           </div>    
-  
+        </div>
+    </div>
 
-        <br>
 
+<br>
+
+          <div class="container">
+            <div class="col s12">
+              <h2 id="myPlaylist">My Playlist</h2>
+            </div>
+          </div>
+
+<br>
 
         <div id="video-container" style="display:block">
           <div class="row">
-            <div class="carousel saved">
-              <a class="carousel-item" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
+            <div class="carousel saved" id="carousel2">
+              <a class="carousel-item z-depth-5" id="carousel-item2" href="#zero!"><img src="http://static.rhap.com/img/500x500/4/3/2/3/28603234_500x500.jpg"></a> 
             </div>    
           </div>         
-
-
     </div>
+        </div>
   </section>
 
 
@@ -105,7 +90,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- <script src="./youtube.js"></script> -->
+  <script src="./youtube.js"></script>
   <script src="./script.js"></script>
 </body>
 </html>
