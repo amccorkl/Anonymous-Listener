@@ -1,0 +1,103 @@
+/* Palette: https://dribbble.com/shots/1186718-Flattastic-Pro-Color-Palette/attachments/156469?mode=media*/
+
+body {
+    background: linear-gradient(180deg, #434A54, #030303);
+    background-size: 300% 300%;
+}
+
+/* container */
+/* row 1 */
+    #hero {
+        background-color: #E9573F;
+        border: solid 5px #FC6E51;
+    }
+        .hero-img{
+            align-items: flex-start;
+        } 
+            #hero-img {
+                overflow: visible;
+                width: 200px;
+                height: inherit;
+                z-index: 1;
+            } 
+    
+    #title{
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+    }
+        h1 {
+            flex: 1;
+            text-align: center;
+            font-size: 7vh;
+            font-family: 'Gloria Hallelujah', cursive;
+            transform: translate(9vw);
+            color: #3f2da5;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 0;
+            
+        }
+
+/* row 2 Sub Title 1 "Top Tracks"*/
+    /* #subTitle1{
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+    } */
+        #topTracks {
+            /* flex:1;
+            text-align: center; */
+            flex: 1;
+            font-size: 4vh;
+            width: inherit;
+            font-family: 'Gloria Hallelujah', cursive;
+            transform: translate(9vw);
+            color: #967ADC;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+
+/* Top Tracks Carousel */
+    #carousel1 {
+        background-color: #967ADC;
+        border: solid 5px #AC92EC;
+    }
+
+/* row 3 Sub Title 2 "My Playlist" */
+    /* #subTitle2{
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+    } */
+        #myPlaylist {
+            /* text-align: center;
+            width: inherit; */
+            font-size: 4vh;
+            font-family: 'Gloria Hallelujah', cursive;
+            transform: translate(9vw);
+            color: #DA4453;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+
+/* My Playlist Carousel */
+    #carousel2 {
+        background-color: #DA4453;
+        border: solid 5px #ED5565;
+    }
+
+/* Carousel Button (both carousels */
+    .btn{
+        background-color: #8CC152;
+        cursor: pointer;
+        color: black;
+    }
+
+    .btn:hover {
+        background-color: #8bc152be;
+    }
+
+
