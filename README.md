@@ -51,7 +51,7 @@ You and your group will use everything you’ve learned over the past six units 
 ```
 
 ## Deployment
-<a href="https://github.com/amccorkl/Anonymous-Listener/settings/pages" target="_blank">
+<a href="https://amccorkl.github.io/Anonymous-Listener/" target="_blank">
     <img scr="./assets/images/buffalo.png" alt="Buffalo Image" width="100px">
 </a>
 
