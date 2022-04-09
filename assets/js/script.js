@@ -254,74 +254,74 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
 // Youtube stuff //
 
 
-function getVideo() {
-  var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
-  // var playListId = "url?list=lettersandnumbers "; 
-  var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${musicvideos}&origin=*&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
+// function getVideo() {
+//   var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
+//   // var playListId = "url?list=lettersandnumbers "; 
+//   var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${musicvideos}&origin=*&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
 
-  $(document).on("click", '.saveBtn', function(e){
-    e.preventDefault();
-    var value = e.target.value;
-    youtubeFunction(value);
-  });
+//   $(document).on("click", '.saveBtn', function(e){
+//     e.preventDefault();
+//     var value = e.target.value;
+//     youtubeFunction(value);
+//   });
 
-  function youtubeFunction(value) {
-    fetch(`myurl${value}`);
-  }
-  for (let i = 0; i < 10; i++) {
-    videosArray.push(`<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/${response[i].id}"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>`);
-  }
+//   function youtubeFunction(value) {
+//     fetch(`myurl${value}`);
+//   }
+//   for (let i = 0; i < 10; i++) {
+//     videosArray.push(`<iframe
+//   width="560"
+//   height="315"
+//   src="https://www.youtube.com/embed/${response[i].id}"
+//   title="YouTube video player"
+//   frameborder="0"
+//   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//   allowfullscreen
+// ></iframe>`);
+//   }
 
 
 
-  // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
-  //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
-  //   "Accept": "application/json"
+//   // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
+//   //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
+//   //   "Accept": "application/json"
 
-  // }).then (response => {
-  //   return response.json();
+//   // }).then (response => {
+//   //   return response.json();
     
-  // }).then(data => {
-  //   console.log(data);
-  // })
+//   // }).then(data => {
+//   //   console.log(data);
+//   // })
 
 
-  var options = {
-    // part: "snippet, id",
-    key: youTubeKey,
-    maxResults: 10,
-    dataType: "jsonp"
-    //playListId: playlistId# 
-  }
-  loadVideos(options, URL);
+//   var options = {
+//     // part: "snippet, id",
+//     key: youTubeKey,
+//     maxResults: 10,
+//     dataType: "jsonp"
+//     //playListId: playlistId# 
+//   }
+//   loadVideos(options, URL);
 
-} 
+// } 
 
   
-  function loadVideos (options, URL) {
-  $.getJSON(URL, options, function(dataResult) {
-    console.log(dataResult);
-    //var id = data.items[0].snippet.resourceId.videoId;
-    // watchVideo(id);
-    // savedVideos(id);
+//   function loadVideos (options, URL) {
+//   $.getJSON(URL, options, function(dataResult) {
+//     console.log(dataResult);
+//     //var id = data.items[0].snippet.resourceId.videoId;
+//     // watchVideo(id);
+//     // savedVideos(id);
 
-    })  
-  }  
+//     })  
+//   }  
 
-getVideo();
-// Youtube stuff //
+// getVideo();
+// // Youtube stuff //
 
 
 
-});
+// });
 
 
 
@@ -388,19 +388,19 @@ append(saved, getStorage, "saved");
 
 
 
-
+})
 
 
 // img.attribute('value', 'theWeekend');
 
       
-      addEventListener('click', function (e) {
-        e.preventDefault();
-        var value = e.target.value;
-        youtubeFunction(value);
-      });
+      // addEventListener('click', function (e) {
+      //   e.preventDefault();
+      //   var value = e.target.value;
+      //   youtubeFunction(value);
+      // });
 
   
 
 
-
+    // })
