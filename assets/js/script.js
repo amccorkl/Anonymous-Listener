@@ -8,7 +8,7 @@ var namePromises = []
 //
 
 var saved = document.querySelector(".saved");
-var savedVideosArray = [];
+var videosArray = [];
 
 //array for href//
 var words = [
@@ -246,6 +246,81 @@ fetch(requestUrl, { headers: { apikey: NapsterAPIKey } })
 
 
 
+
+
+
+
+
+// Youtube stuff //
+
+
+function getVideo() {
+  var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
+  // var playListId = "url?list=lettersandnumbers "; 
+  var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${musicvideos}&origin=*&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
+
+  $(document).on("click", '.saveBtn', function(e){
+    e.preventDefault();
+    var value = e.target.value;
+    youtubeFunction(value);
+  });
+
+  function youtubeFunction(value) {
+    fetch(`myurl${value}`);
+  }
+  for (let i = 0; i < 10; i++) {
+    videosArray.push(`<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/${response[i].id}"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>`);
+  }
+
+
+
+  // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
+  //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
+  //   "Accept": "application/json"
+
+  // }).then (response => {
+  //   return response.json();
+    
+  // }).then(data => {
+  //   console.log(data);
+  // })
+
+
+  var options = {
+    // part: "snippet, id",
+    key: youTubeKey,
+    maxResults: 10,
+    dataType: "jsonp"
+    //playListId: playlistId# 
+  }
+  loadVideos(options, URL);
+
+} 
+
+  
+  function loadVideos (options, URL) {
+  $.getJSON(URL, options, function(dataResult) {
+    console.log(dataResult);
+    //var id = data.items[0].snippet.resourceId.videoId;
+    // watchVideo(id);
+    // savedVideos(id);
+
+    })  
+  }  
+
+getVideo();
+// Youtube stuff //
+
+
+
 });
 
 
@@ -277,14 +352,16 @@ for (var i = 0; i < data.length; i++) {
       var anchor = document.createElement('a')
       var image = document.createElement('img')
       var button = document.createElement('button')
-
+      
       anchor.setAttribute('class', 'carousel-item')
       anchor.setAttribute("href", "#" + words[i + 1] + "!");
       image.setAttribute('src', imagesValue);
-      button.setAttribute('class', 'saveBtn btn btn-outline-secondary')
+      button.setAttribute('class', 'saveBtn btn btn-flat')
       button.setAttribute('type', 'button')
       button.setAttribute('id', buttonId[i + 1])
-
+      button.setAttribute('style', 'color: #DA4453')
+      
+      button.textContent = "save" 
       el.appendChild(anchor)
       anchor.appendChild(image)
       anchor.appendChild(button)
@@ -314,94 +391,16 @@ append(saved, getStorage, "saved");
 
 
 
-
-
-
-// Youtube stuff //
-$(document).ready(function() {
-
-  function getVideo() {
-    var youTubeKey = "AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg";
-    // var playListId = "url?list=lettersandnumbers "; 
-    var URL = `https://youtube.googleapis.com/youtube/v3/videos?q=${   [0]}&origin=*&part=snippet&chart=mostPopular&fields=items(id%2Csnippet(title))`;
-
-
-    // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
-    //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
-    //   "Accept": "application/json"
-
-    // }).then (response => {
-    //   return response.json();
-      
-    // }).then(data => {
-    //   console.log(data);
-    // })
-
-
-    var options = {
-      // part: "snippet, id",
-      key: youTubeKey,
-      maxResults: 10,
-      dataType: "jsonp"
-      //playListId: playlistId# 
-    }
-    loadVideos(options, URL);
-
-  } 
-  
-    
-    function loadVideos (options, URL) {
-    $.getJSON(URL, options, function(dataResult) {
-      console.log(dataResult);
-      //var id = data.items[0].snippet.resourceId.videoId;
-      // watchVideo(id);
-      // savedVideos(id);
-
-      })  
-    }  
-
-    //loads the video at a certain size on the UI
-    // function watchVideo() { //id= would be the song/artist clicked on
-    //   $("#carousel").html(`<iframe width="640" height="360"
-    //   src="https://www.youtube.com/embed/{${id}}?autoplay=1"
-    //   frameborder="0"></iframe>
-    //   `)
-
-    
-    // }
-
-
-  getVideo();
-})
-// Youtube stuff //
-
-
-
-
 // img.attribute('value', 'theWeekend');
 
       
-    //   addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     var value = e.target.value;
-    //     youtubeFunction(value);
-    //   });
+      addEventListener('click', function (e) {
+        e.preventDefault();
+        var value = e.target.value;
+        youtubeFunction(value);
+      });
 
-    //   function youtubeFunction(value) {
-    //     fetch(`myurl${value}`);
-    //   }
-    //   var videoLink = [];
-    //   for (let i = 0; i < 10; i++) {
-    //     videoLink.push(`<iframe
-    //   width="560"
-    //   height="315"
-    //   src="https://www.youtube.com/embed/${response[i].id}"
-    //   title="YouTube video player"
-    //   frameborder="0"
-    //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    //   allowfullscreen
-    // ></iframe>`);
-    //   }
+  
 
 
 
