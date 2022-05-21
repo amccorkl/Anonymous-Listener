@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 
     // fetch ('https://youtube.googleapis.com/youtube/v3/search?q=dog&key=AIzaSyBws4RKAUJpj7LklbC4kujH7CujSgNAOKg', { 
-    //   "Authorization": "Bearer SAPISIDHASH 1649111903_d9d5b3fa092931583e739bac17f09e7c10793478",
+    //   "Authorization": "Bearer SAPISIDHASH ",
     //   "Accept": "application/json"
 
     // }).then (response => {
